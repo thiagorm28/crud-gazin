@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  server:
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/api-db
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: crudserver
+    ports:
+        - 3333:3333
+    depends_on:
+        - mongodb
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+        - 27017:27017
+  client:
+    container_name: client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - './client:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
