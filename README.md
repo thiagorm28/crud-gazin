@@ -9,7 +9,7 @@ Aplicação do processo seletivo Gazin com API REST com uso de Node.Js em TypeSc
 - Deletar desenvolvedor
 - Listar todos desenvolvedores
 - Listar todos desenvolvedores por página e query params
-- Pág/ina Web que consuma estas rotas
+- Página Web que consuma estas rotas
 
 ## Pré-requisitos:
 - Instalar o Docker Desktop.
