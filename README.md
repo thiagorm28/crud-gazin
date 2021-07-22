@@ -24,6 +24,7 @@ docker-compose up -d
 Rodando o Node
 ```
 cd server/
+npm install
 npm start
 ```
 
@@ -34,5 +35,6 @@ Servidor web rodando em http://localhost:3000
 Para rodar os testes basta usar os comandos abaixo
 ```
 cd ./server/
+npm install
 npm test
 ```
